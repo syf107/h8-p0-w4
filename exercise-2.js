@@ -1,10 +1,9 @@
 function fpb(angka1, angka2) {
-    
-    //inisiasi array untuk memasukkan angka angka FPB
     var hasil = 0;
 
     // looping untuk menentukan angka FPB dari kedua belah sisi dengan membagi Angka dengan angka Looping, yang hasilnya 0.
     for (var m = 0; m <= angka1 || m <= angka2; m++){
+       
         //fungsi if, jika ada angka yang bisa membagi dua angka FPB, maka dinyatakan sebagai hasil.
         if(angka1 % m === 0 && angka2  % m === 0){
             hasil = m;
