@@ -1,32 +1,27 @@
 function cariModus(arr) {
-    // you can only write your code here!
-    //
-    var modus = [];
-    var hasil = -1;
 
-    
+    var anon = 0; // untuk menyimpan seberapa banyak modus yang sama.
+    var anon2 = 0; // menyimpan nillai array
+    var maks = 0; 
 
     for(var m = 0; m < arr.length; m++){
-        for(var n = 0; n < arr.length-1; n++){
-            if (arr[0] === arr[1] && arr[1] === arr[2]){
-                hasil = -1;
-            } else if (m === n){
-                n++;
-            } else if (arr[m] === arr[n]) {
-                modus.push(arr[m]);
-            } 
+        for(var n = 0; n < arr.length; n++){
+            if (arr[m] === arr[n] && m !== n){
+                anon++;
+            }
+
+            if (maks < anon){
+                anon2 = arr[m];
+                maks = anon;
+            }
         }
+        anon = 0;   
     }
-    var modusSort = modus.sort(function(value1, value2){return value1 - value2});
-    if (modusSort.length === 1) {
-        hasil = modusSort[0];
-    } else if (modusSort.length > 1) {
-        hasil = modusSort[0] ;
-    } else if (modusSort.length === 0) {
-        hasil = -1;
-    
-}
-    return hasil;
+    if (maks === 0 || maks === arr.length-1){
+        return -1;
+    } else {
+        return anon2;
+    }
 }
 
 
@@ -37,3 +32,5 @@ function cariModus(arr) {
   console.log(cariModus([10, 3, 1, 2, 5])); // -1
   console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
   console.log(cariModus([7, 7, 7, 7, 7])); // -1
+  console.log(cariModus([7, 7, 7, 8, 8, 8])); // 
+  console.log(cariModus([7, 5, 5, 8, 8, 8])); // 
