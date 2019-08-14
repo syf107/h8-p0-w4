@@ -6,11 +6,7 @@
 function checkAB(num) {
     // you can only write your code here!
     var b = num.indexOf('b');
-    var besar = 0;
 
-    // if (num.indexOf('a') === -1 || num.indexOf('b') === -1){
-    //     // return false;
-    // }
     
     for(var m = 0; m < num.length; m++){
         for(var n = 0; n < num.length; n++){        
