@@ -11,18 +11,13 @@ function checkAB(num) {
     for(var m = 0; m < num.length; m++){
         for(var n = 0; n < num.length; n++){        
             if(num[m] === 'a' && num[n] === 'b' && m !== n){
-               var jarak = Math.abs(n - m);
+                if (Math.abs(n - m) === 4){
+                    return true;
+                }
             }      
         }
     }
-    
-    if(jarak-1 <= 3){
-        return true;
-    } else if (jarak-1 === undefined){
-        return false;
-    } else {
-        return false;
-    }
+    return false;    
 
 }
   
@@ -32,3 +27,4 @@ function checkAB(num) {
   console.log(checkAB('you are boring')); // true
   console.log(checkAB('barbarian')); // true
   console.log(checkAB('bacon and meat')); // false
+  console.log(checkAB('lane borroweb')); // true

@@ -12,8 +12,10 @@ function changeMe(arr) {
             age: 2019 - arr[m][3]
         }
         if (arr[m][3] === undefined){
-            superhero.age = "Invalid Birth Year"
-        } 
+            superhero.age = "Invalid Birth Year";
+        } else if (arr[m][3] > 2019){
+            superhero.age = "Invalid Birth Year";
+        }
 
         console.log(superhero);
 }
