@@ -2,7 +2,15 @@ function graduates (students) {
 
     // membuat variabel penampung.
     var result = {};
+    
+    // iterasi jika data kosong
+    if(students.length === 0){
+        return "// []"
+    }
 
+
+    // membuat iterasi untuk mengelompokkan nilai di atas 75
+    // jika benar, maka masukkan ke dalam push class dengan objek nama dan skornya.
     for(var m = 0; m < students.length; m++){
         if(students[m].score > 75){
             if(result[students[m].class] === undefined){
